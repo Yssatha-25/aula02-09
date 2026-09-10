@@ -27,3 +27,21 @@ export async function listarPedidos(req, res) {
         });
     }
 }
+
+export async function buscarPedido(req, res) {
+    try {
+        const id = Number(req.params.id);
+        const pedido = pedidos.find(p => p.id === id);
+        if (!pedido) {
+            return res.status(404).json({
+                mensagem: "Pedido não encontrado."
+            });
+        }
+        return res.status(200).json(pedido);
+    } catch (erro) {
+        return res.status(400).json({
+            mensagem: "Erro ao buscar pedido.",
+            erro: erro.message
+        });
+    }
+}
