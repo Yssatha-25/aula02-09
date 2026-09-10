@@ -1,9 +1,5 @@
+
 const pedidos = [];
 
-const dados = {
-    produtoId: produto.id,
-    quantidade: dados.quantidade,
-    total
-}
+export { pedidos };
 
-export default { dados, pedidos };
